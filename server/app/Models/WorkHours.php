@@ -16,4 +16,24 @@ class WorkHours extends Model
         'lanch_time_start',
         'lanch_time_end'
     ];
+
+    protected function getOpenTimeAttribute($value)
+    {
+        return date('H:i', strtotime($value));
+    }
+
+    protected function getCloseTimeAttribute($value)
+    {
+        return date('H:i', strtotime($value));
+    }
+
+    protected function getLanchTimeStartAttribute($value)
+    {
+        return date('H:i', strtotime($value));
+    }
+
+    protected function getLanchTimeEndAttribute($value)
+    {
+        return date('H:i', strtotime($value));
+    }
 }
